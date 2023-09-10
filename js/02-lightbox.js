@@ -2,6 +2,19 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 const list = document.querySelector(".gallery");
+list.addEventListener("click", onImgElement);
+
+function onImgElement(event) {
+  event.preventDefault();
+
+  if (event.target === event.currentTarget) {
+    return;
+  }
+  const lightbox = new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    captionDelay: 250,
+  });
+}
 
 list.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
 
