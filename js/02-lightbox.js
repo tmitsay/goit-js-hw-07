@@ -2,19 +2,22 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 const list = document.querySelector(".gallery");
-list.addEventListener("click", onImgElement);
 
-function onImgElement(event) {
-  event.preventDefault();
+// list.addEventListener("click", () => {
+//   const lightbox = new SimpleLightbox(".gallery a", {
+//     captionsData: "alt",
+//     captionDelay: 250,
+//   });
+// });
 
-  if (event.target === event.currentTarget) {
-    return;
-  }
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-}
+// function onImgElement(event) {
+//   // event.preventDefault();
+
+//   // if (event.target === event.currentTarget) {
+//   //   return;
+//   // }
+
+// }
 
 list.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
 
@@ -32,5 +35,10 @@ function createMarkup(arr) {
     )
     .join("");
 }
+
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
 
 console.log(galleryItems);

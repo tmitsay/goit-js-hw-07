@@ -12,7 +12,7 @@ list.addEventListener("click", onImgElement);
 function onImgElement(event) {
   event.preventDefault();
 
-  if (event.target === event.currentTarget) {
+  if (event.target.tagName !== "IMG") {
     return;
   }
 
